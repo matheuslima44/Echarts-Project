@@ -28,13 +28,13 @@ class Coleta {
       td_id.innerText = this.arrayColetas[i].nomeId;
       td_name.innerText = this.arrayColetas[i].nome;
 
-      let imgEdit = document.createElement("img");
-      imgEdit.src = "./img/Edit.png";
-
       let imgDelete = document.createElement("img");
       imgDelete.src = "/img/Delete.jpg";
+      imgDelete.setAttribute(
+        "onclick",
+        "coleta.deletar(" + this.arrayColetas[i].id + ")"
+      );
 
-      td_edit.appendChild(imgEdit);
       td_edit.appendChild(imgDelete);
     }
   }
@@ -73,6 +73,15 @@ class Coleta {
   cancelar() {
     document.getElementById("valor").value = "";
     document.getElementById("name").value = "";
+  }
+
+  deletar(id) {
+    for (let i = 0; i < this.arrayColetas.length; i++) {
+      if (this.arrayColetas[i].id == id) {
+        this.arrayColetas.splice(i, 1);
+        tbody.deleteRow(i);
+      }
+    }
   }
 }
 
