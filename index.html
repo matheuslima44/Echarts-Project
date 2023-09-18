@@ -17,11 +17,29 @@
   <body>
     <div class="container">
       <div class="row my-4">
-        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <!-- class="col-sm-12 col-md-6 col-lg-6 col-xl-6" -->
+        <div class="col-sm-12">
           <div id="chart1" class="chart"></div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-          <div id="chart2" class="chart"></div>
+          <div class="addCollect">
+            <input type="text" placeholder="Id da Coleta:" id="valor" />
+            <input type="text" placeholder="Name da Coleta:" id="name" />
+            <button type="button" onclick="coleta.salvar()">
+              salvar Coleta
+            </button>
+            <button type="button" onclick="coleta.cancelar()">
+              Cancelar Coleta
+            </button>
+          </div>
+          <div class="collect">
+            <table>
+              <thead>
+                <th>Id:</th>
+                <th>Name:</th>
+                <th>Editar:</th>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
